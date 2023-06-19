@@ -1,0 +1,98 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  user-select: none;
+}
+#input {
+  width: 75%;
+  height: 50px;
+  font-size: 3rem;
+  border-radius: 10px;
+}
+#input::placeholder {
+  color: rgb(75, 173, 173);
+  padding-left: 10px;
+}
+#subbmid {
+  width: 24%;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 3rem;
+  cursor: pointer;
+}
+#subbmid:hover {
+  background-color: #ccc;
+}
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  font-size: 4rem;
+}
+#delete {
+  position: absolute;
+  font-size: 3rem;
+  background-color: #F0F0F0;
+  cursor: pointer;
+  color: rgb(83, 82, 82);
+  font-weight: 600;
+  height: 50px;
+  border-radius: 10px;
+  padding: 0 68px;
+  margin: 5px 0;
+  right: 0;
+  top: 0;
+}
+@keyframes add {
+  from{
+    opacity: 0.4;
+    left: 40px;
+  }
+  to{
+    opacity: 1;
+    left: 0px;
+  }
+}
+#delete:hover {
+  background-color: #ccc;
+}
+.todo-list{
+  display: flex;
+  justify-content: start;
+  position: relative;
+  animation: add 0.3s linear;
+  border-bottom: 2px solid rgb(160, 160, 160);
+  margin: 0 20px;
+}
+.todo-item {
+  margin-left: 50px;
+  font-size: 50px;
+  cursor: pointer;
+}
+.complete {
+  color: #ccc;
+}
+.complete::after {
+  content: "";
+  height: 1px;
+  width: calc(100% - (68px*2) - 25px);
+  border-bottom: 1px solid black;
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+.container {
+  margin: 0 20px;
+}
+.todo-comp {
+  width: 100px;
+  height: 50px;
+  font-size: 50px;
+  cursor: pointer;
+}
+.todo-comp.complete ~ .todo-item {
+  color: #ccc;
+}
